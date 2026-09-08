@@ -1,5 +1,5 @@
 (ns oauth.core
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [oauth.model :as m]
             [oauth.ports :as p]))
 

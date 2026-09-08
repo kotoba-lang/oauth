@@ -1,7 +1,7 @@
 (ns oauth.adapters.discovery
   (:require [oauth.adapters.http :as http]
             [oauth.model :as m]
-            [clojure.string :as str]))
+            [kotoba.lang.text :as str]))
 
 (defn- metadata-url [issuer]
   (str (str/replace issuer #"/+$" "") "/.well-known/oauth-authorization-server"))
