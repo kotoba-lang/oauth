@@ -1,5 +1,5 @@
 (ns oauth.adapters.client-auth
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [oauth.adapters.http :as http]))
 
 (defn- basic-token [client-id client-secret]

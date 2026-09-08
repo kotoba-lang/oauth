@@ -6,7 +6,7 @@
   directly."
   (:require [clojure.test :refer [deftest is]]
             [clojure.java.shell :as sh]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [oauth.datom :as datom]))
 
 ;; The artifact is compiled by the bot before the suite runs (amu compile

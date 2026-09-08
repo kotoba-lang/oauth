@@ -1,6 +1,6 @@
 (ns oauth.adapters.java-http-test
   (:require [clojure.edn :as edn]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.test :refer [deftest is]]
             [oauth.adapters.http]
             [oauth.adapters.java-http :as java-http]
