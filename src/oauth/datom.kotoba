@@ -1,6 +1,6 @@
 (ns oauth.datom
   "Kotoba guest: product semantics of oauth.datom as plain values.
-  Parity source: src/oauth/datom.cljc (unchanged original).
+  Parity source: src/oauth/datom.cljk (unchanged original).
 
   The Clojure original builds a 1-element vector of a fixed-key map per call.
   Here each request/result rides as a record (the struct-with-fixed-keys

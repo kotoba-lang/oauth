@@ -1,7 +1,7 @@
 (ns oauth.datom-parity-test
   "Parity test: the compiled .kotoba guest (src/oauth/datom.kotoba, target
   js-browser) must produce the same datom values as the original Clojure in
-  src/oauth/datom.cljc, for the same inputs. The guest runs through
+  src/oauth/datom.cljk, for the same inputs. The guest runs through
   instantiateKotoba on the amu-compiled artifact; the original is called
   directly."
   (:require [clojure.test :refer [deftest is]]
