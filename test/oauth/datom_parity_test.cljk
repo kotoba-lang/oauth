@@ -5,7 +5,7 @@
   instantiateKotoba on the amu-compiled artifact; the original is called
   directly."
   (:require [kotoba.test :refer [deftest is]]
-            [clojure.java.shell :as sh]
+            [kotoba.process :as sh]
             [kotoba.lang.text :as str]
             [oauth.datom :as datom]))
 
