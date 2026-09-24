@@ -1,5 +1,5 @@
 (ns oauth.adapters.discovery-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [oauth.adapters.discovery :as discovery]
             [oauth.adapters.http :as http]))
 

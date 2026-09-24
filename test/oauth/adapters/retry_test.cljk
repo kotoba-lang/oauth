@@ -1,5 +1,5 @@
 (ns oauth.adapters.retry-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [oauth.adapters.http :as http]
             [oauth.adapters.retry :as retry]))
 
