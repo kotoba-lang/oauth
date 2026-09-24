@@ -1,5 +1,5 @@
 (ns oauth.adapters.java-http
-  (:require [kotoba.http.form-urlencoded :as form-urlencoded] [clojure.edn :as edn]
+  (:require [kotoba.http.form-urlencoded :as form-urlencoded] [kotoba.lang.edn :as edn]
             [kotoba.lang.text :as str]
             [oauth.adapters.http :as http])
   (:import [java.net URI]
