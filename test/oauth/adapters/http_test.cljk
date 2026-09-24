@@ -1,5 +1,5 @@
 (ns oauth.adapters.http-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [oauth.adapters.http :as a]
             [oauth.core :as c]
             [oauth.model :as m]

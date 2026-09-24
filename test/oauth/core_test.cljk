@@ -1,5 +1,5 @@
 (ns oauth.core-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [oauth.core :as c]
             [oauth.model :as m]
             [oauth.ports :as p]))

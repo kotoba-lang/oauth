@@ -1,5 +1,5 @@
 (ns oauth.adapters.token-signature-test
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [oauth.adapters.token-signature :as sig]))
 
 (deftest validates-token-signature-claims-as-introspection-result

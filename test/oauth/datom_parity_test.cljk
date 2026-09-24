@@ -4,7 +4,7 @@
   src/oauth/datom.cljk, for the same inputs. The guest runs through
   instantiateKotoba on the amu-compiled artifact; the original is called
   directly."
-  (:require [clojure.test :refer [deftest is]]
+  (:require [kotoba.test :refer [deftest is]]
             [clojure.java.shell :as sh]
             [kotoba.lang.text :as str]
             [oauth.datom :as datom]))
