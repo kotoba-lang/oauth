@@ -1,8 +1,8 @@
 (ns oauth.adapters.java-http
-  (:require [clojure.edn :as edn]
+  (:require [kotoba.http.form-urlencoded :as form-urlencoded] [clojure.edn :as edn]
             [kotoba.lang.text :as str]
             [oauth.adapters.http :as http])
-  (:import [java.net URI URLEncoder]
+  (:import [java.net URI]
            [java.net.http HttpClient HttpRequest HttpRequest$BodyPublishers HttpResponse$BodyHandlers]
            [java.nio.charset StandardCharsets]))
 
@@ -10,9 +10,9 @@
   (->> form
        (remove (comp nil? val))
        (map (fn [[k v]]
-              (str (URLEncoder/encode (name k) StandardCharsets/UTF_8)
+              (str (form-urlencoded/form-encode (name k))
                    "="
-                   (URLEncoder/encode (str v) StandardCharsets/UTF_8))))
+                   (form-urlencoded/form-encode (str v)))))
        (str/join "&")))
 
 (defn- request
