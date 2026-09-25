@@ -1,5 +1,5 @@
 (ns oauth.core-test
-  (:require [kotoba.test :refer [deftest is]]
+  (:require [kotoba.lang.error :as kerror] [kotoba.test :refer [deftest is]]
             [oauth.core :as c]
             [oauth.model :as m]
             [oauth.ports :as p]))
@@ -17,7 +17,7 @@
   (let [port (reify p/IOAuth
                (exchange-token! [_ _] nil)
                (introspect! [_ _] nil))]
-    (is (thrown? #?(:clj clojure.lang.ExceptionInfo :cljs ExceptionInfo)
+    (is (thrown? kerror/ExceptionInfo
                  (c/exchange port (m/token-request :authorization-code {:code "c"}))))))
 
 (deftest callback-consumes-state-once
@@ -32,7 +32,7 @@
                (introspect! [_ _] nil))]
     (is (:oauth.result/ok? (c/exchange-callback port store auth-req cb
                                                 {:code-verifier-ref "kagi://oauth/pkce"})))
-    (is (thrown? #?(:clj clojure.lang.ExceptionInfo :cljs ExceptionInfo)
+    (is (thrown? kerror/ExceptionInfo
                  (c/exchange-callback port store auth-req cb
                                       {:code-verifier-ref "kagi://oauth/pkce"})))))
 
@@ -53,5 +53,5 @@
             :oauth.introspection/expires-at "2026-07-01T00:10:00Z"
             :oauth.introspection/issued-at nil}
            (c/require-active-token port "kagi://oauth/active")))
-    (is (thrown? #?(:clj clojure.lang.ExceptionInfo :cljs ExceptionInfo)
+    (is (thrown? kerror/ExceptionInfo
                  (c/require-active-token port "kagi://oauth/inactive")))))

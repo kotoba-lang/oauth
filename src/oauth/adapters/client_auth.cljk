@@ -1,11 +1,11 @@
 (ns oauth.adapters.client-auth
-  (:require [kotoba.lang.text :as str]
+  (:require [kotoba.bytes :as kbytes] [kotoba.lang.text :as str]
             [oauth.adapters.http :as http]))
 
 (defn- basic-token [client-id client-secret]
   #?(:clj (let [raw (str client-id ":" client-secret)]
-            (.encodeToString (java.util.Base64/getEncoder)
-                             (.getBytes raw "UTF-8")))
+            (kbytes/base64-encode
+                             (kbytes/utf8-bytes raw)))
      :cljs (js/btoa (str client-id ":" client-secret))))
 
 (defn apply-client-auth [opts form-or-body]
